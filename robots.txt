@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /sitedown.php
+Disallow: /admin/
+Disallow: /handlers/
+Disallow: /files/cache/
+Disallow: /files/public/avatars/

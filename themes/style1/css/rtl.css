@@ -1,0 +1,60 @@
+/*-----------------------------------------------------------------------------------*/
+/*	   	body , basics
+/*-----------------------------------------------------------------------------------*/
+html, body {
+   overflow-x:hidden;
+   overflow-y:auto;
+   direction: rtl;
+}
+
+
+/*** Header ***/
+#Clock {text-align: right;}
+
+/*** News Page ***/
+.item-list .post-thumbnail {float: right;}
+.post-thumbnail {margin: 0 0 1px 10px;}
+.entry {line-height: 1.5;}
+/*** All ***/
+.body-content .span8{margin-left: 0.5%;margin-right: 1.5%;}
+.body-content .noleft {}
+.row {}
+.noleft {margin-left: 0px;}
+.span8 {margin-left: 2px;right:0}
+.span4{margin-left: 2px;}
+.newsbox_index .border_box .span6 {margin-left:4px;}
+.margins{margin-left:0.5%;margin-right:1%;}
+aside .margins{margin-left:2%;margin-right:1%;}
+aside .border_box .news_image{float: right;margin-left: 15px;margin-right: 0;}
+.newsbox_index, .body-content  .newsbox_index{float: right;margin-left: 0.5%;margin-right: 1.5%;}
+.news_box_index_image_thumb {float: right;}
+/*** ***/
+
+.nb2_next2_img {}
+.nb2_next2_news li a {}
+.news_box_index_newstitle{}
+.newsbox_index .border_box .span6 {margin-left:4px;float:right;}
+
+/*** Maqalat ***/ 
+.nb2_next2_img img ,.nb2_next2_img img.news_image {padding:2px;background:#fff;border:1px solid #eeeeee;float: right;margin-left: 15px;margin-right: 0;height: 66px;width: 110px;min-height: 66px;}
+.nb2_next2_news li .news_date {float: left;}
+.more, .news_extendstring {float: left;text-align: center;}
+
+
+/*** Footer ***/
+.footer {direction: rtl;}
+
+/*** Feature ***/
+
+ul.slider_nav li {float: right;margin-left: 10.1px;margin-right:0;}
+.slider_items .slider_caption h2 a {font-weight: bold;font-size: 16px;}
+
+/*** Comments ***/
+#comments {font-family: Tahoma,Geneva,sans-serif;font-size: 14px;direction: rtl;float: right;}
+#comment-title {float: right}
+.user-name {float: right;}
+.comments-name {float: right;}
+.comments-date {float: right;}
+.comments-data {float: right;}
+.reply-btn {float: right;}
+.reply-text {float: right;}

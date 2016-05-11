@@ -1,0 +1,4 @@
+<?php   // Remember that we must include class2.php   require_once("../../class2.php");   // Check current user is an admin, redirect to main site if not   if (!getperms("P")) {      header("location:".e_HTTP."index.php");      exit;   }   require_once(e_ADMIN ."auth.php");
+if (!defined('ADMIN_WIDTH')){    define(ADMIN_WIDTH, "width:100%;");}	// Our informative text	$text = LAN_FRONTPAGE_34;	$text .="<br /><br /><br /> Created & supported by Naja7host.com";
+	// The usual, tell e107 what to include on the page	$ns->tablerender(LAN_FRONTPAGE_22 , $text);   require_once(e_ADMIN ."footer.php");
+?>

@@ -1,0 +1,115 @@
+ 
+ 
+ 
+ 
+ 
+<!DOCTYPE html>
+<!-- 
+	This is Flowplayer standalone demo. The fastest way to get started. 
+	You can freely copy things on your site. All demos can be found from: 
+	
+	http://flowplayer.org/demos/
+	
+	Enjoy!
+-->
+ 
+<head>
+ 
+ 
+ 
+ 
+ 
+<!-- flowplayer scripts should be loaded from your servers NOT from static.flowplayer.org  -->
+ 
+<script type="text/javascript" src="http://static.flowplayer.org/js/flowplayer-3.2.4.min.js"></script>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<!-- some styling for the standalone page. this line can (or must) be removed -->
+<link rel="stylesheet" type="text/css" href="/demos/standalone.css"/>
+ 
+ 
+</head>
+ 
+ 
+<body>
+ 
+ 
+<script src="http://static.flowplayer.org/js/jquery.mousewheel.js"></script>
+<script src="http://static.flowplayer.org/js/flowplayer.playlist-3.0.8.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/playlist.css"/>
+ 
+ 
+<div style="width:900px;">
+ 	
+    <!-- player container--> 
+    <a href="api:Q_6qRyYn-68" style="display:block;width:425px;height:300px;float:left;" id="youtube">
+    
+       <!-- splash image inside the container --> 
+       <img src="http://www.flowplayer.org/img/home/flow_eye.jpg" 
+            alt="Search engine friendly content" />
+     </a>
+     
+    <div id="playlistContainer" style="float:left;width:190px;margin-left:50px; margin-top:0px;">
+    </div>
+</div> 
+ 
+<!-- Flowplayer installation and configuration -->
+<script language="JavaScript"> 
+ 
+// function that builds up the related videos scrollable list
+function showRelatedList(gdata, container) {
+    var relatedVideos = gdata.relatedVideos;
+    var content = '<em>Related Videos:</em>';
+    content += '<a class="go up"></a><div class="playlist"><div class="clips low">';
+    
+    jQuery.each( relatedVideos, function(index, item){
+        content += '<a href="'+ item.url +'" '+ (index==0 ? 'class="first"' : "") +'>';
+        content += item.title + "<br/>";
+        content += "<em>" + Math.round(item.duration / 60) + " min</em></a>";
+    });
+    
+    content += '</div></div><a class="go down"></a>';
+    
+    $(container).html(content);
+    
+    $("div.playlist").scrollable({
+        items:'div.clips',
+        vertical:true,
+        next:'a.down',
+        prev:'a.up'
+    });
+}
+ 
+// embed the player
+$f("youtube", "http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf", {
+    plugins:  {
+        youtube: {
+            url:'flowplayer.youtube-3.2.1.swf',
+            enableGdata: true,
+            
+            // listener to youtube API data, used to build up a related videos list
+            onApiData: function(gdata) {
+                console.log(gdata);
+                
+                // use the function defined above to show the related clips
+                showRelatedList(gdata, "#playlistContainer");
+            }
+        }
+    },
+    clip: {
+        provider: 'youtube',
+        urlResolvers: 'youtube'
+    }
+}).playlist("div.clips");
+</script>	
+</body>
+ 
+</html>
+
